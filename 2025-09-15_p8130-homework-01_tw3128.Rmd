@@ -1,0 +1,97 @@
+---
+title: "2025-09-15_p8130-homework-01"
+author: "Chris"
+date: "2025-09-15"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: united
+---
+
+
+# Problem 2
+
+## Prepare the Data
+Create two vectors.
+```{r}
+vec_ls = c(12, 15, 10, 14, 13, 16, 20, 18, 9, 11, 17, 19, 14, 13, 15)
+
+vec_os = c(20, 25, 22, 30, 18, 27, 24, 21, 29, 26, 22, 23, 28, 24)
+```
+
+## Question a
+```{r}
+ls_mean = mean(vec_ls)
+ls_median = median(vec_ls)
+ls_range = range(vec_ls)
+ls_sd = sd(vec_ls)
+
+ls_mean
+ls_median
+ls_range
+ls_sd
+```
+
+The mean of recovery time for the laparoscopic group is **`r ls_mean`**, median is
+**`r ls_median`**, the minimum is **`r min(vec_ls)`**, the maximum is **`r max(vec_ls)`** and standard deviation is **`r ls_sd`**.
+
+## Question b
+```{r drawing a boxplot}
+boxplot(vec_ls,
+        main = "Recovery Time for LS Group",
+        ylab = "Days",
+        col = "yellow",
+        border = "black"
+        )
+```
+
+## Question c
+```{r}
+os_mean = mean(vec_os)
+os_median = median(vec_os)
+os_range = range(vec_os)
+os_sd = sd(vec_os)
+
+os_mean
+os_median
+os_range
+os_sd
+```
+The mean of recovery time for the laparoscopic group is **`r os_mean`**, median is
+**`r os_median`**, the minimum is **`r min(vec_os)`**, the maximum is **`r max(vec_os)`** and standard deviation is **`r os_sd`**.
+
+## Question d
+```{r}
+boxplot(vec_os,
+        main = "Recovery Time for OS Group",
+        ylab = "Days",
+        col = "lightblue",
+        border = "black"
+        )
+```
+
+## Question e
+Combine two vectors into a single list.
+```{r}
+data_whole = list("col_ls" = vec_ls, "col_os" = vec_os)
+
+boxplot(data_whole,
+        main = "Recovery Time by Type",
+        ylab = "Days",
+        col = c("pink", "lightgreen"),
+        border = "black")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
